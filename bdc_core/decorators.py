@@ -19,7 +19,7 @@ def require_model(schema, draft=draft7_format_checker):
         BadRequest: When request arguments do not match with JSON schema.
 
     Example:
-    >>> from bdc_core.utils.helpers import require_model
+    >>> from bdc_core.decorators import require_model
     >>> from flask import request, Flask
     >>> app = Flask(__name__)
     >>> coverage_schema = {
