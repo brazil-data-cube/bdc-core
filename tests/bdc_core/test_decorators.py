@@ -1,4 +1,4 @@
-from bdc_core.decorators import require_model
+from bdc_core.decorators.validators import require_model
 from flask import Flask, request
 from werkzeug.exceptions import BadRequest
 import json
