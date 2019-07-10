@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='bdc_core',
-    version='0.2',
+    version='0.1',
     description='Brazilian Data Cube Core Package',
     author='Admin',
     author_email='admin@admin.com',
