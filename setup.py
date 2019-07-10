@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 setup(
@@ -10,6 +10,6 @@ setup(
     author='Admin',
     author_email='admin@admin.com',
     license="MIT",
-    packages=['bdc_core'],
+    packages=find_packages(),
     url='https://github.com/brazil-data-cube/',
 )
