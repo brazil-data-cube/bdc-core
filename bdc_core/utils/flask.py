@@ -17,7 +17,7 @@ class APIResource(Resource):
     It aims to override `dispatch_request` member in order to
     handle status_code and error message through exception contexts.
     The exceptions must inherit from @APIError.
-    
+
     """
     def dispatch_request(self, *args, **kwargs):
         try:
@@ -27,3 +27,8 @@ class APIResource(Resource):
                 "code": e.code,
                 "message": e.description
             }, e.code)
+        except Exception as e:
+            return return_response({
+                "code": 500,
+                "message": str(e)
+            }, 500)
