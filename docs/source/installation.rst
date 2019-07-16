@@ -11,7 +11,7 @@ You must use `bdc-core` with Python 3+ and PyPy.
 Dependencies
 ------------
 
-These distributions will be installed automatically when installing wtss.
+These distributions will be installed automatically when installing bdc-core.
 
 * `Flask <http://flask.pocoo.org/>`_ microframework for Python based on Wekzeug.
 * `jsonschema <https://python-jsonschema.readthedocs.io/en/stable/>`_ an implementation of JSON Schema for Python.
