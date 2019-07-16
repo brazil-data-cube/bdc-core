@@ -1,0 +1,5 @@
+bdc_core.decorators
+===================
+
+.. automodule:: bdc_core.decorators
+    :members:

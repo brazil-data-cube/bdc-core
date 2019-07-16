@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>API Reference &#8212; bdc-core 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bdc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bdc-core 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">API Reference</a><ul>
+<li><a class="reference internal" href="#bdc-core-decorators">bdc_core decorators</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="index.html">Docs</a></li>
+              
+              <li>API Reference</li>
+            </ol>
+
+            <a href="https://github.com/brazil-data-cube/bdc-readthedocs-theme">
+              <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+            </a>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="api-reference">
+<span id="api"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="bdc-core-decorators">
+<h2>bdc_core decorators<a class="headerlink" href="#bdc-core-decorators" title="Permalink to this headline">¶</a></h2>
+<p>This is documentation of bdc-core decorators</p>
+<span class="target" id="module-bdc_core.decorators.validators"></span><dl class="function">
+<dt id="bdc_core.decorators.validators.require_model">
+<code class="sig-prename descclassname">bdc_core.decorators.validators.</code><code class="sig-name descname">require_model</code><span class="sig-paren">(</span><em class="sig-param">schema</em>, <em class="sig-param">draft=&lt;jsonschema._format.FormatChecker object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#bdc_core.decorators.validators.require_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility to require JSON schema object to validate request query arguments (request.args)
+You can use it with APIResource in order to format BadRequestError output.</p>
+<p>TODO: Improve decorator to support request POST data values</p>
+<dl>
+<dt>Args:</dt><dd><p>schema (dict): JSON schema with Python Dictionaries.
+draft (jsonschema.FormatChecker, optional): JSON Schema format property checker.</p>
+</dd>
+<dt>Raises:</dt><dd><p>BadRequest: When request arguments do not match with JSON schema.</p>
+</dd>
+<dt>Example:</dt><dd><p>Here an example usage with Flask application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">bdc_core.decorators.validators</span> <span class="k">import</span> <span class="n">require_model</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">Flask</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coverage_schema</span> <span class="o">=</span> <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;coverage&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}},</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;coverage&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nd">@require_model</span><span class="p">(</span><span class="n">coverage_schema</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_coverage</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="sd">&#39;&#39;&#39;Now its safe to get coverage name&#39;&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">coverage_name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;coverage&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="s1">&#39;Coverage &quot;</span><span class="si">{}</span><span class="s1">&quot; provided&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">coverage_name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<p>This is documentation of bdc-core utility</p>
+<span class="target" id="module-bdc_core.utils.flask"></span><dl class="class">
+<dt id="bdc_core.utils.flask.APIResource">
+<em class="property">class </em><code class="sig-prename descclassname">bdc_core.utils.flask.</code><code class="sig-name descname">APIResource</code><span class="sig-paren">(</span><em class="sig-param">api=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bdc_core.utils.flask.APIResource" title="Permalink to this definition">¶</a></dt>
+<dd><p>API Resource for Brazil Data Cube Modules (bdc)
+It aims to override <cite>dispatch_request</cite> member in order to
+handle status_code and error message through exception contexts.
+The exceptions must inherit from &#64;APIError.</p>
+<dl class="method">
+<dt id="bdc_core.utils.flask.APIResource.dispatch_request">
+<code class="sig-name descname">dispatch_request</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#bdc_core.utils.flask.APIResource.dispatch_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclasses have to override this method to implement the
+actual view function code.  This method is called with all
+the arguments from the URL rule.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="bdc_core.utils.flask.return_response">
+<code class="sig-prename descclassname">bdc_core.utils.flask.</code><code class="sig-name descname">return_response</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">status_code</em>, <em class="sig-param">dumps=True</em><span class="sig-paren">)</span><a class="headerlink" href="#bdc_core.utils.flask.return_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Formats return for application / json</p>
+</dd></dl>
+
+<span class="target" id="module-bdc_core.utils.python"></span><dl class="function">
+<dt id="bdc_core.utils.python.replace_by_list">
+<code class="sig-prename descclassname">bdc_core.utils.python.</code><code class="sig-name descname">replace_by_list</code><span class="sig-paren">(</span><em class="sig-param">my_string</em>, <em class="sig-param">list_strs</em>, <em class="sig-param">new_value</em><span class="sig-paren">)</span><a class="headerlink" href="#bdc_core.utils.python.replace_by_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a character override to a string based on a list of strings</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="installation.html" title="previous chapter (use the left arrow)">Installation</a>
+      </div>
+    
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">bdc-core 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2019, National Institute for Space Research. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
