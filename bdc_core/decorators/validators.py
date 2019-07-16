@@ -1,19 +1,29 @@
-from flask import request
+"""
+This file contains the commom validators used through
+Brazil Data Cube projects
+"""
+
 from functools import wraps
-from jsonschema import draft7_format_checker, SchemaError, validate, ValidationError
+from flask import request
+from jsonschema import draft7_format_checker, \
+                       SchemaError, \
+                       validate, \
+                       ValidationError
 from werkzeug.exceptions import BadRequest
 
 
 def require_model(schema, draft=draft7_format_checker):
     """
-    Utility to require JSON schema object to validate request query arguments (request.args)
+    Utility to require JSON schema object to validate request
+    query arguments (request.args).
     You can use it with APIResource in order to format BadRequestError output.
 
     TODO: Improve decorator to support request POST data values
 
     Args:
         schema (dict): JSON schema with Python Dictionaries.
-        draft (jsonschema.FormatChecker, optional): JSON Schema format property checker.
+        draft (jsonschema.FormatChecker, optional): JSON Schema format
+            property checker.
 
     Raises:
         BadRequest: When request arguments do not match with JSON schema.
@@ -42,7 +52,9 @@ def require_model(schema, draft=draft7_format_checker):
         @wraps(fn)
         def decorated_function(*args, **kwargs):
             try:
-                validate(instance=request.args, schema=schema, format_checker=draft)
+                validate(instance=request.args,
+                         schema=schema,
+                         format_checker=draft)
             except (SchemaError, ValidationError) as e:
                 raise BadRequest(e.message)
             return fn(*args, **kwargs)

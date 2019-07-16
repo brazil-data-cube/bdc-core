@@ -1,3 +1,8 @@
+"""
+This file contains the common flask utilities used through
+Brazil Data Cube projects
+"""
+
 from flask import Response, json
 from flask_restplus import Resource
 from werkzeug.exceptions import HTTPException
@@ -27,7 +32,7 @@ class APIResource(Resource):
                 "code": e.code,
                 "message": e.description
             }, e.code)
-        except Exception as e:
+        except BaseException as e:
             return return_response({
                 "code": 500,
                 "message": str(e)
