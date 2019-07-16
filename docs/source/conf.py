@@ -69,5 +69,5 @@ extensions.append("bdc_theme")
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
     "project_nav_name": project,
-    # "github_project": "brazil-data-cube/bdc-core" 
+    "github_project": "brazil-data-cube/bdc-core" 
 }
