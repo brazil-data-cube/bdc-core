@@ -19,22 +19,24 @@ def require_model(schema, draft=draft7_format_checker):
         BadRequest: When request arguments do not match with JSON schema.
 
     Example:
-    >>> from bdc_core.decorators.validators import require_model
-    >>> from flask import request, Flask
-    >>> app = Flask(__name__)
-    >>> coverage_schema = {
-    >>>     "type": "object",
-    >>>     "properties": {"coverage": {"type": "string"}},
-    >>>     "required": ["coverage"]
-    >>> }
-    >>> @app.route('/')
-    >>> @require_model(coverage_schema)
-    >>> def get_coverage():
-    >>>     '''Now its safe to get coverage name'''
-    >>>     coverage_name = request.args['coverage']
-    >>>     return 'Coverage "{}" provided'.format(coverage_name)
-    >>> if __name__ == '__main__':
-    >>>     app.run()
+        Here an example usage with Flask application:
+
+        >>> from bdc_core.decorators.validators import require_model
+        >>> from flask import request, Flask
+        >>> app = Flask(__name__)
+        >>> coverage_schema = {
+        >>>     "type": "object",
+        >>>     "properties": {"coverage": {"type": "string"}},
+        >>>     "required": ["coverage"]
+        >>> }
+        >>> @app.route('/')
+        >>> @require_model(coverage_schema)
+        >>> def get_coverage():
+        >>>     '''Now its safe to get coverage name'''
+        >>>     coverage_name = request.args['coverage']
+        >>>     return 'Coverage "{}" provided'.format(coverage_name)
+        >>> if __name__ == '__main__':
+        >>>     app.run()
     """
     def decorator(fn):
         @wraps(fn)

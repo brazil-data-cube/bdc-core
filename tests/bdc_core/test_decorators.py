@@ -1,8 +1,8 @@
-from bdc_core.decorators.validators import require_model
-from flask import Flask, request
-from werkzeug.exceptions import BadRequest
 import json
 import unittest
+from flask import Flask, request
+from werkzeug.exceptions import BadRequest
+from bdc_core.decorators.validators import require_model
 
 
 app = Flask('')
