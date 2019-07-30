@@ -10,6 +10,7 @@ from jsonschema import draft7_format_checker, \
                        validate, \
                        ValidationError
 from werkzeug.exceptions import BadRequest
+from bdc_core.utils.logger import logger
 
 
 def require_model(schema, draft=draft7_format_checker):
@@ -22,8 +23,7 @@ def require_model(schema, draft=draft7_format_checker):
 
     Args:
         schema (dict): JSON schema with Python Dictionaries.
-        draft (jsonschema.FormatChecker, optional): JSON Schema format
-            property checker.
+        draft (jsonschema.FormatChecker, optional): JSON Schema format.
 
     Raises:
         BadRequest: When request arguments do not match with JSON schema.
@@ -56,6 +56,7 @@ def require_model(schema, draft=draft7_format_checker):
                          schema=schema,
                          format_checker=draft)
             except (SchemaError, ValidationError) as e:
+                logger.debug('Validate JSONSchema %s', e.message)
                 raise BadRequest(e.message)
             return fn(*args, **kwargs)
         return decorated_function
