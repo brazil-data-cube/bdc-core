@@ -19,8 +19,8 @@ def validate_scope(scope_required, scope_token):
     if scope_required:
         service, function, actions = scope_required.split(':')
         if (service != scope_token['type'] and scope_token['type'] != '*') or \
-            (function not in scope_token['name'] or scope_token['name'] != '*') or \
-            (actions not in scope_token['actions'] or '*' in scope_token['actions']):
+            (function != scope_token['name'] and scope_token['name'] != '*') or \
+            (actions not in scope_token['actions'] and '*' in scope_token['actions']):
             raise Unauthorized('Scope not allowed!')
 
 
