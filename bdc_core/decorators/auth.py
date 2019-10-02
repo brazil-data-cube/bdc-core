@@ -1,4 +1,5 @@
 import jwt
+import os
 from functools import wraps
 from werkzeug.exceptions import Forbidden, HTTPException, Unauthorized
 
