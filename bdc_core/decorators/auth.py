@@ -30,7 +30,7 @@ def jwt_required(func):
 
         try:
             token = get_token()
-            payload = jwt.decode(token, Config.CLIENT_SECRET_KEY)
+            payload = jwt.decode(token, os.environ.get('CLIENT_SECRET_KEY'))
             if payload.get('user_id') and payload.get('access_token'):
                 request.user_id = payload['user_id']
                 validate_scope(kwargs['scope'], payload['access'][0])
