@@ -1,5 +1,6 @@
 import jwt
 import os
+from flask import request
 from functools import wraps
 from werkzeug.exceptions import Forbidden, HTTPException, Unauthorized
 
