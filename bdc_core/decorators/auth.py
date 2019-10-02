@@ -1,4 +1,5 @@
 import jwt
+from functools import wraps
 from werkzeug.exceptions import Forbidden, HTTPException, Unauthorized
 
 def get_token():
