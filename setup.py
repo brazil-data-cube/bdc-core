@@ -10,7 +10,7 @@ tests_require = [
 
 extras_require = {
     "docs": [
-        'bdc-readthedocs-theme @ git+git://github.com/brazil-data-cube/bdc-readthedocs-theme.git@test-pip#egg=bdc-readthedocs-theme',
+        'bdc-readthedocs-theme @ git+git://github.com/brazil-data-cube/bdc-readthedocs-theme.git#egg=bdc-readthedocs-theme',
         'Sphinx>=2.1.2',
     ],
     "tests": tests_require
