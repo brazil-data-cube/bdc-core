@@ -15,7 +15,7 @@ setup(
     install_requires=[
         'Flask==1.0.3',
         'flask-restplus==0.12.1',
-        'jsonschema==3.0.1,
+        'jsonschema==3.0.1',
         'pytest==5.0.0',
         'Sphinx==2.1.2',
         'Sphinx==2.1.2',
