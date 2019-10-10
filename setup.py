@@ -20,9 +20,9 @@ setup(
         'Sphinx==2.1.2',
         'Sphinx==2.1.2',
         'Sphinx==2.1.2',
-        'bdc_theme @ git+git://github.com/brazil-data-cube/bdc-readthedocs-theme.git',
+        'bdc-readthedocs-theme @ git+git://github.com/brazil-data-cube/bdc-readthedocs-theme.git@test-pip#egg=bdc-readthedocs-theme',
         'pytest==5.0.0',
         'Werkzeug==0.14.1'
     ]
-    
+
 )
