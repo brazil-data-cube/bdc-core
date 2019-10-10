@@ -16,13 +16,10 @@ setup(
         'Flask==1.0.3',
         'flask-restplus==0.12.1',
         'jsonschema==3.0.1',
-        'pytest==5.0.0',
-        'Sphinx==2.1.2',
-        'Sphinx==2.1.2',
-        'Sphinx==2.1.2',
+        'pytest~=5.0.0',
+        'Sphinx>=2.1.2',
         'bdc-readthedocs-theme @ git+git://github.com/brazil-data-cube/bdc-readthedocs-theme.git@test-pip#egg=bdc-readthedocs-theme',
-        'pytest==5.0.0',
-        'Werkzeug==0.14.1'
+        'Werkzeug~=0.14.1'
     ]
 
 )
