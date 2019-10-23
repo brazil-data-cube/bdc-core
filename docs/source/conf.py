@@ -59,15 +59,15 @@ html_static_path = ['_static']
 # BDC theme configuration
 #
 
-import bdc_theme
+import bdc_readthedocs_theme
 
-html_theme_path = bdc_theme.html_theme_path()
+html_theme_path = bdc_readthedocs_theme.html_theme_path()
 html_theme = 'bdc_theme'
 
-extensions.append("bdc_theme")
+extensions.append("bdc_readthedocs_theme")
 
 html_theme_options = {
     # Set the name of the project to appear in the sidebar
     "project_nav_name": project,
-    "github_project": "brazil-data-cube/bdc-core" 
+    "github_project": "brazil-data-cube/bdc-core"
 }

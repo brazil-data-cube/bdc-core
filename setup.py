@@ -30,7 +30,7 @@ setup(
         'Flask>=1.0.3',
         'flask-restplus>=0.12.1',
         'Flask-JWT>=0.3.2',
-        'jsonschema==3.0.1',
+        'jsonschema>=3.0.1',
     ],
     extras_require=extras_require,
     tests_require=tests_require

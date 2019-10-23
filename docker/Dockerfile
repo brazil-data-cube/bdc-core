@@ -4,4 +4,6 @@ ADD . /bdc-core
 
 WORKDIR /bdc-core
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install pip --upgrade && \
+    pip install wheel && \
+    pip install -e .[tests,docs]
