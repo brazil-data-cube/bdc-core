@@ -19,7 +19,7 @@ extras_require = {
 
 setup(
     name='bdc-core',
-    version='0.3',
+    version='0.0.4',
     description='Brazilian Data Cube Core Package',
     author='Admin',
     author_email='admin@admin.com',
