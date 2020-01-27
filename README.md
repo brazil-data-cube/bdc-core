@@ -24,3 +24,17 @@ In order to run tests, use the following command:
 ```bash
 python -m pytest -v tests/
 ```
+
+## Docker
+
+Build docker image with following command:
+
+```bash
+docker build --tag brazildatacube/bdc-core:0.2 -f docker/Dockerfile .
+```
+
+After that, you can run tests with:
+
+```bash
+python -m pytest -v tests/
+```
