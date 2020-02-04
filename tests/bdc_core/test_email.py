@@ -22,6 +22,6 @@ class TestSendEmail(unittest.TestCase):
         self.assertNotEqual(self.email.to, None)
         self.assertNotEqual(self.email.email_msg, None)
 
-    def test_send_email(self):
-        result = self.email.send()
-        self.assertEqual(result, True)
+    # def test_send_email(self):
+    #     result = self.email.send()
+    #     self.assertEqual(result, True)
