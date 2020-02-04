@@ -31,6 +31,8 @@ setup(
         'flask-restplus>=0.12.1',
         'Flask-JWT>=0.3.2',
         'jsonschema>=3.0.1',
+        'secure-smtplib==0.1.1',
+        'Mako==1.1.1'
     ],
     extras_require=extras_require,
     tests_require=tests_require
