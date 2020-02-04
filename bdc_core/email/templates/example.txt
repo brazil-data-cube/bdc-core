@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>${args['title_page']}</title>
+    <title>${args["title_page"]}</title>
 
     <style>
         body {
@@ -42,14 +42,14 @@
 </head>
 
 <body>
-    <h1>${args['title_body']}</h1>
-    <p>${args['body']}</p>
+    <h1>${args["title_body"]}</h1>
+    <p>${args["body"]}</p>
 
-    <a href="${args['button_link']}" target="_blank">
-        ${args['button_title']}
+    <a href="${args["button_link"]}" target="_blank">
+        ${args["button_title"]}
     </a>
 
-    <p class="footer">Brazil Data Cube © 2020</p>
+    <p class="footer">Brazil Data Cube - 2020</p>
 </body>
 
 </html>
