@@ -7,3 +7,5 @@ git+https://github.com/brazil-data-cube/bdc-readthedocs-theme@master
 Flask-JWT>=0.3.2
 pytest==5.0.0
 Werkzeug>=0.14.1
+secure-smtplib==0.1.1
+Mako==1.1.1

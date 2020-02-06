@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>${args["title_page"]}</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+        }
+
+        h1 { 
+            font-size: 2em;
+            text-align: center;
+        }
+
+        p { text-align: center; }
+
+        a {
+            padding: 7.5px 25px; 
+            background: #009933; 
+            display: block;
+            margin: 15px auto;
+            font-size: 1.3em;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #FFF;
+        }
+        a:hover {
+            background: #00b33c;
+        }
+
+        p.footer {
+            font-size: 0.85em; 
+            color: #666666;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>${args["title_body"]}</h1>
+    <p>${args["body"]}</p>
+
+    <a href="${args["button_link"]}" target="_blank">
+        ${args["button_title"]}
+    </a>
+
+    <p class="footer">Brazil Data Cube - 2020</p>
+</body>
+
+</html>
