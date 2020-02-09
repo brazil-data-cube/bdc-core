@@ -12,7 +12,7 @@ from mako.template import Template
 from .config import SMTP_PORT, SMTP_HOST, EMAIL_ADDRESS, \
     EMAIL_PASSWORD, BASE_PATH_TEMPLATES
 
-class EmailBusiness(object):
+class EmailBusiness:
     """
     Class to send emails
 
@@ -23,9 +23,13 @@ class EmailBusiness(object):
         template (string) - template title.
         args (dict) - args to mount template
     """
-    def __init__(self, username, email_addr, subject, template, body_args=None):
+    def __init__(self, username, email_addr, subject, template, **kwargs):
         self.to = self.mount_user(username, email_addr)
-        self.email_msg = self.mount_email(template, subject, body_args)
+        self.email_msg = self.mount_email(
+            template,
+            subject,
+            kwargs.get('body_args')
+        )
 
 
     def mount_user(self, name, email_addr) -> Address:

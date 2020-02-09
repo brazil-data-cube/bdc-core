@@ -6,8 +6,10 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-"""Python BDC Core."""
+"""Version information for BDC Core.
+This file is imported by ``bdc_core.__init__``,
+and parsed by ``setup.py``.
+"""
 
-from .version import __version__
 
-__all__ = ('__version__',)
+__version__ = '0.2.0'
