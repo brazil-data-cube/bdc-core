@@ -14,6 +14,10 @@ BDC Core
         :target: https://github.com//brazil-data-cube/bdc-core/blob/master/LICENSE
         :alt: Software License
 
+.. image:: http://www.dpi.inpe.br/jenkins/view/brazil-data-cube/job/brazil-data-cube/job/bdc-core/badge/icon
+        :target: https://github.com//brazil-data-cube/bdc-core
+        :alt: Software License
+
 
 Common functionalities used in Brazil Data Cube applications
 
