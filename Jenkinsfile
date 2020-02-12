@@ -46,7 +46,7 @@ def codeCheck() {
 
 def generateDocs() {
     stage('generate docs') {
-        sh 'docker run --rm -i -v $(pwd):/bdc-core --name core_docs ${tagName} python setup.py build_sphinx'
+        sh 'docker run --rm -i -v $(pwd):/bdc-core --name core_docs ${tagName} python3 setup.py build_sphinx'
     }
 }
 
