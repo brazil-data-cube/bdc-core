@@ -20,3 +20,9 @@ This is documentation of bdc-core utility
 
 .. automodule:: bdc_core.utils.python
    :members:
+
+.. automodule:: bdc_core.decorators.auth
+   :members:
+
+.. automodule:: bdc_core.decorators.utils
+   :members:
