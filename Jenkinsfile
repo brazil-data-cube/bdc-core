@@ -52,7 +52,7 @@ def generateDocs() {
 
 def unittest() {
     stage('unittest') {
-        sh 'docker run --rm -i --name core_test ${tagName} python3 -m pytest -v'
+        sh 'docker run --rm -i --name core_test ${tagName} ./run-test.sh'
     }
 }
 
