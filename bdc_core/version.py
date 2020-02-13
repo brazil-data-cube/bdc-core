@@ -7,6 +7,7 @@
 #
 
 """Version information for BDC Core.
+
 This file is imported by ``bdc_core.__init__``,
 and parsed by ``setup.py``.
 """

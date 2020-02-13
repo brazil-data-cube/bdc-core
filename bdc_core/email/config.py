@@ -6,10 +6,7 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-"""
-This file contains the common infos to send email
-Brazil Data Cube projects
-"""
+"""This file contains the common infos to send email Brazil Data Cube projects."""
 import os
 
 BASE_PATH_TEMPLATES = os.getenv(

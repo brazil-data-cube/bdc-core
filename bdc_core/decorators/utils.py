@@ -6,9 +6,7 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-"""
-Utility decorators for Brazil Data Cube Core app
-"""
+"""Utility decorators for Brazil Data Cube Core app."""
 
 import contextlib
 import os
@@ -18,8 +16,7 @@ from bdc_core.utils.logger import logger
 
 @contextlib.contextmanager
 def working_directory(path):
-    """
-    Changes working directory and returns to previous on exit
+    """Changes working directory and returns to previous on exit.
 
     Exceptions:
         FileNotFoundError when could not change to directory provided.
@@ -27,21 +24,22 @@ def working_directory(path):
     Args:
         path (str): Directory to change
 
+    Returns:
+        str Path to the changed directory
+
     Example:
         >>> import os
         >>> from tempfile import gettempdir
         >>> from bdc_core.decorators.utils import working_directory
-        >>>
-        >>>
+        ...
+        ...
         >>> TEMP_DIR = gettempdir()
         >>> @working_directory(TEMP_DIR)
-        >>> def create_file(filename):
-        >>>     # Create file in Temporary folder
-        >>>     print('Current dir: {}'.format(os.getcwd()))
-        >>>     with open(filename, 'w') as f:
-        >>>         f.write('Hello World')
-        >>>
-        >>> create_file('hello world.txt')
+        ... def create_file(filename):
+        ...     # Create file in Temporary folder
+        ...     print('Current dir: {}'.format(os.getcwd()))
+        ...     with open(filename, 'w') as f:
+        ...         f.write('Hello World')
     """
     owd = os.getcwd()
     logger.debug("Changing working dir from %s to %s", owd, path)

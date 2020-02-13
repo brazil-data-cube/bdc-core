@@ -33,7 +33,7 @@ import os
 
 def create_logger(application=None):
     """
-    Creates a logger object context for application
+    Creates a logger object context for application.
 
     You can customize a logger for your module and handle individual scopes
 

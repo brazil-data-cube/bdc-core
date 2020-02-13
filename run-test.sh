@@ -8,8 +8,8 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-# pylint bdc_core && \
+pydocstyle bdc_core && \
 isort --check-only --diff --recursive bdc_core/*.py && \
 # check-manifest --ignore ".travis-*" --ignore ".readthedocs.*" && \
 pytest &&
-# sphinx-build -qnW --color -b doctest doc/sphinx/ doc/sphinx/_build/doctest
+sphinx-build -qnW --color -b doctest docs/sphinx/ docs/sphinx/_build/doctest
