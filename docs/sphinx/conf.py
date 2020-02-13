@@ -1,3 +1,11 @@
+#
+# This file is part of BDC Core.
+# Copyright (C) 2019-2020 INPE.
+#
+# BDC Core is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+#
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -15,14 +23,20 @@ import sys
 sys.path.insert(0, os.path.abspath('../..'))
 sys.setrecursionlimit(1500)
 
+
+g = dict()
+with open(os.path.join('..', '..', 'bdc_core', 'version.py'), 'rt') as fp:
+    exec(fp.read(), g)
+    version = g['__version__']
+
 # -- Project information -----------------------------------------------------
 
 project = 'bdc-core'
-copyright = '2019, National Institute for Space Research'
+copyright = '2019-2020, National Institute for Space Research'
 author = 'BDC - INPE'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -32,6 +46,10 @@ release = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.coverage',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -40,7 +58,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -53,7 +71,7 @@ html_theme = 'alabaster'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
 
 #
 # BDC theme configuration
@@ -71,3 +89,6 @@ html_theme_options = {
     "project_nav_name": project,
     "github_project": "brazil-data-cube/bdc-core"
 }
+
+def setup(app):
+    app.add_stylesheet('bdc_core.min.css')

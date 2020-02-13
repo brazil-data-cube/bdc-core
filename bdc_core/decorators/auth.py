@@ -1,14 +1,12 @@
 #
 # This file is part of BDC Core.
-# Copyright (C) 2019 INPE.
+# Copyright (C) 2019-2020 INPE.
 #
 # BDC Core is free software; you can redistribute it and/or modify it
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-"""
-Authentication decorators such scope validator and token require
-"""
+"""Authentication decorators such scope validator and token require."""
 
 from functools import wraps
 import os
@@ -18,8 +16,7 @@ from werkzeug.exceptions import Forbidden, HTTPException, Unauthorized
 
 
 def get_token() -> str:
-    """Retrieves token from request intercept"""
-
+    """Retrieves token from request intercept."""
     try:
         bearer, authorization = request.headers['Authorization'].split()
         if 'bearer' not in bearer.lower():
@@ -31,8 +28,7 @@ def get_token() -> str:
 
 
 def validate_scope(scope_required, scope_token):
-    """
-    Validates user token scope
+    """Validates user token scope.
 
     Args:
         scope_required (str) - OAuth scope required
@@ -41,7 +37,6 @@ def validate_scope(scope_required, scope_token):
     Exceptions:
         Unauthorized when scope is not allowed
     """
-
     if scope_required:
         service, function, actions = scope_required.split(':')
 
@@ -52,8 +47,7 @@ def validate_scope(scope_required, scope_token):
 
 
 def require_oauth_scopes(scope):
-    """
-    Flask decorator to require OAuth scope in request intercept.
+    """Flask decorator to require OAuth scope in request intercept.
 
     Make sure to export the following variables:
 
@@ -61,15 +55,15 @@ def require_oauth_scopes(scope):
         - `CLIENT_AUDIENCE` OAuth client audience control
 
     Example:
-        >>> from flask import current_app
+        >>> from flask import Flask
         >>> from bdc_core.decorators.auth import require_oauth_scopes
         >>>
-        >>>
-        >>> @current_app.route('/edit/<int:thing_id>')
-        >>> @require_oauth_scopes('app:thing:edit')
-        >>> def edit_something(thing_id):
-        >>>     # put logic here
-        >>>     return dict()
+        >>> app = Flask('')
+        >>> @app.route('/edit/<int:thing_id>')
+        ... @require_oauth_scopes('app:thing:edit')
+        ... def edit_something(thing_id):
+        ...     # put logic here
+        ...     return dict()
 
     Args:
         scope (str) - Required scope to match

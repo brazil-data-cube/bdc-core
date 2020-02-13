@@ -1,3 +1,11 @@
+#
+# This file is part of BDC Core.
+# Copyright (C) 2019-2020 INPE.
+#
+# BDC Core is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+#
+
 """
 Base logger handler for Brazil Data Cube projects.
 
@@ -25,7 +33,7 @@ import os
 
 def create_logger(application=None):
     """
-    Creates a logger object context for application
+    Creates a logger object context for application.
 
     You can customize a logger for your module and handle individual scopes
 

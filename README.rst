@@ -28,12 +28,6 @@ Installation
 See `INSTALL.rst <./INSTALL.rst>`_.
 
 
-Running
-=======
-
-See `RUNNING.rst <./RUNNING.rst>`_.
-
-
 Developer Documentation
 =======================
 

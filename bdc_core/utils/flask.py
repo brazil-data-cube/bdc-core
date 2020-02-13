@@ -1,7 +1,12 @@
-"""
-This file contains the common flask utilities used through
-Brazil Data Cube projects
-"""
+#
+# This file is part of BDC Core.
+# Copyright (C) 2019-2020 INPE.
+#
+# BDC Core is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+#
+
+"""This file contains the common flask utilities used through Brazil Data Cube projects."""
 
 from flask import Response, json
 from flask_restplus import Resource
@@ -10,23 +15,21 @@ from bdc_core.utils.logger import logger
 
 
 def return_response(data, status_code, dumps=True):
-    """
-    Formats return for application / json
-    """
+    """Formats return for application / json."""
     data = json.dumps(data) if dumps else data
     return Response(data, status_code, content_type='application/json')
 
 
 class APIResource(Resource):
-    """
-    API Resource for Brazil Data Cube Modules (bdc)
+    """API Resource for Brazil Data Cube Modules.
+
     It aims to override `dispatch_request` member in order to
     handle status_code and error message through exception contexts.
     The exceptions must inherit from @APIError.
     """
+
     def dispatch_request(self, *args, **kwargs):
-        """
-        Override dispatch request to handle HTTP Errors
+        """Override dispatch request to handle HTTP Errors.
 
         Args:
             args (tuple) - Flask API Resource Args
