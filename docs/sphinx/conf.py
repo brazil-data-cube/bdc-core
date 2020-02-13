@@ -1,3 +1,11 @@
+#
+# This file is part of BDC Core.
+# Copyright (C) 2019-2020 INPE.
+#
+# BDC Core is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+#
+
 # Configuration file for the Sphinx documentation builder.
 #
 # This file only contains a selection of the most common options. For a full
@@ -18,7 +26,7 @@ sys.setrecursionlimit(1500)
 # -- Project information -----------------------------------------------------
 
 project = 'bdc-core'
-copyright = '2019, National Institute for Space Research'
+copyright = '2019-2020, National Institute for Space Research'
 author = 'BDC - INPE'
 
 # The full version, including alpha/beta/rc tags

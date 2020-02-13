@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 
+#
+# This file is part of BDC Core.
+# Copyright (C) 2019-2020 INPE.
+#
+# BDC Core is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+#
+
 import os
 from setuptools import find_packages, setup
 
@@ -48,7 +56,7 @@ with open(os.path.join(here, 'bdc_core', 'version.py'), 'rt') as fp:
 setup(
     name='bdc-core',
     version=version,
-    description='Brazilian Data Cube Core Package',
+    description='Brazil Data Cube Core Package',
     author='Admin',
     author_email='admin@admin.com',
     license="MIT",
