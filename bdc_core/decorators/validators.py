@@ -38,8 +38,11 @@ def require_model(schema, draft=draft7_format_checker):
         >>> from bdc_core.decorators.validators import require_model
         >>> from flask import request, Flask
         >>> app = Flask('')
-        >>> coverage_schema = {"type": "object", "properties": {"coverage": {"type": "string"}}, "required": ["coverage"]}
-        >>>
+        >>> coverage_schema = {
+        ...    "type": "object",
+        ...    "properties": {"coverage": {"type": "string"}},
+        ...    "required": ["coverage"]
+        ... }
         >>> @app.route('/')
         ... @require_model(coverage_schema)
         ... def get_coverage():

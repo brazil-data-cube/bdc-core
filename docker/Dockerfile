@@ -14,4 +14,4 @@ WORKDIR /bdc-core
 
 RUN pip3 install pip --upgrade && \
     pip install wheel && \
-    pip install -e .[tests,docs]
+    pip install -e .[all]
