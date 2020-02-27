@@ -15,8 +15,20 @@ BDC Core
         :alt: Software License
 
 .. image:: http://www.dpi.inpe.br/jenkins/view/brazil-data-cube/job/brazil-data-cube/job/bdc-core/badge/icon
-        :target: https://github.com//brazil-data-cube/bdc-core
-        :alt: Software License
+        :target: http://www.dpi.inpe.br/jenkins/view/brazil-data-cube/job/brazil-data-cube/job/bdc-core
+        :alt: Build Status
+
+.. image:: https://img.shields.io/badge/lifecycle-experimental-orange.svg
+        :target: https://www.tidyverse.org/lifecycle/#experimental
+        :alt: Software Life Cycle
+
+.. image:: https://img.shields.io/github/tag/brazil-data-cube/bdc-core.svg
+        :target: https://github.com/brazil-data-cube/bdc-core/releases
+        :alt: Release
+
+.. image:: https://badges.gitter.im/brazil-data-cube/community.png
+        :target: https://gitter.im/brazil-data-cube/community#
+        :alt: Join the chat
 
 
 Common functionalities used in Brazil Data Cube applications
