@@ -31,7 +31,10 @@ BDC Core
         :alt: Join the chat
 
 
-Common functionalities used in Brazil Data Cube applications
+About
+=====
+
+Common functionalities used in Brazil Data Cube applications.
 
 
 Installation
@@ -43,7 +46,7 @@ See `INSTALL.rst <./INSTALL.rst>`_.
 Developer Documentation
 =======================
 
-TODO
+See https://bdc-core.readthedocs.io/en/latest/
 
 
 License

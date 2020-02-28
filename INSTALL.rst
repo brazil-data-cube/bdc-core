@@ -15,13 +15,18 @@ Installation
 Production installation
 -----------------------
 
-**Under Development!**
+Install from `GitHub <https://github.com/brazil-data-cube/bdc-core>`_:
 
-.. Install from `PyPI <https://pypi.org/>`_:
-..
-.. .. code-block:: shell
-..
-..     $ pip3 install bdc-core
+.. code-block:: shell
+
+        $ pip3 install git+https://github.com/brazil-data-cube/bdc-core@b-0.2
+
+
+If you want to build the documentation and tests, please, install all the extras as follow:
+
+.. code-block:: shell
+
+        $ pip3 install git+https://github.com/brazil-data-cube/bdc-core@b-0.2#egg=bdc_core[all]
 
 
 Development installation

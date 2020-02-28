@@ -64,7 +64,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+doc/sphinx/_build/
 
 # PyBuilder
 target/
@@ -103,3 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 .vscode
+
+# PyCharm
+.idea/
+
+# MacOS
+.DS_Store
