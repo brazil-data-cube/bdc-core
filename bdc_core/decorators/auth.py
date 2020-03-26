@@ -38,7 +38,7 @@ def validate_scope(scope_required, scope_token):
         Unauthorized when scope is not allowed
     """
     if scope_required:
-        service, function, actions = scope_required.split(':')
+        service, function, actions = scope_required.lower().split(':')
 
         if (service != scope_token['type'] and scope_token['type'] != '*') or \
             (function != scope_token['name'] and scope_token['name'] != '*') or \
