@@ -21,7 +21,10 @@ from pkg_resources import resource_filename
 def default_email_variables():
     """Retrieve global values for Email provider."""
     return dict(
-        BASE_PATH_TEMPLATES=os.getenv('BASE_PATH_TEMPLATES', resource_filename(__name__, 'templates')),
+        BASE_PATH_TEMPLATES=os.getenv(
+            'BASE_PATH_TEMPLATES',
+            resource_filename(__name__, 'templates')
+        ),
         EMAIL_ADDRESS=os.getenv('EMAIL_ADDRESS', 'test@domain.com'),
         EMAIL_PASSWORD=os.getenv('EMAIL_PASSWORD', 'password'),
         SMTP_PORT=os.getenv('SMTP_PORT', '587'),
@@ -30,10 +33,11 @@ def default_email_variables():
 
 
 def is_valid_smtp(smtp_host=None, smtp_port=None, email=None, password=None):
-    """Try to open a valid connnection with the SMTP provider and returns connection state.
+    """Validate a connection with SMTP provider.
 
     Note:
-        If you don't provide any parameter, uses the default values defined in `default_email_variables`.
+        If you don't provide any parameter, uses the default values defined
+        in `default_email_variables`.
     """
     default_env = default_email_variables()
 
@@ -48,7 +52,7 @@ def is_valid_smtp(smtp_host=None, smtp_port=None, email=None, password=None):
             smtp_server.starttls()
             smtp_server.login(email, password)
         return True
-    except smtplib.SMTPException as e:
+    except smtplib.SMTPException:
         return False
 
 
@@ -82,7 +86,7 @@ class EmailBusiness:
         """Mount user recipient object."""
         return Address(display_name=name, addr_spec=email_addr)
 
-    def mount_email(self, template, subject, args, **kwargs) -> EmailMessage:
+    def mount_email(self, template, subject, args) -> EmailMessage:
         """Mount email recipient object."""
         template = Template(filename='{}/{}'.format(
             self.env['BASE_PATH_TEMPLATES'], template))
@@ -100,7 +104,8 @@ class EmailBusiness:
     def send(self):
         """Dispatch email."""
         try:
-            with smtplib.SMTP(self.env['SMTP_HOST'], port=int(self.env['SMTP_PORT'])) as smtp_server:
+            with smtplib.SMTP(self.env['SMTP_HOST'],
+                              port=int(self.env['SMTP_PORT'])) as smtp_server:
                 smtp_server.ehlo()
                 smtp_server.starttls()
                 smtp_server.login(self.env['EMAIL_ADDRESS'], self.env['EMAIL_PASSWORD'])
