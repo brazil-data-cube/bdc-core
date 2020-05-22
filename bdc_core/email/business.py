@@ -78,8 +78,7 @@ class EmailBusiness:
         self.email_msg = self.mount_email(
             template,
             subject,
-            kwargs.pop('body_args', dict()),
-            **kwargs
+            kwargs.pop('body_args', dict())
         )
 
     def mount_user(self, name, email_addr) -> Address:
