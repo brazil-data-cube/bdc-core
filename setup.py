@@ -50,7 +50,7 @@ install_require = [
     'jsonschema>=3.0.1',
     'secure-smtplib==0.1.1',
     'Mako==1.1.1',
-    'Werkzeug>=0.16.1,<1', # Temp workaround https://github.com/noirbizarre/flask-restplus/issues/777
+    'Werkzeug>=0.16.1,<3', # Temp workaround https://github.com/noirbizarre/flask-restplus/issues/777
 ]
 
 packages = find_packages()
